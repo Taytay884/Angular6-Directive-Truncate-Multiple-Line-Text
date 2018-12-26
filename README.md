@@ -5,8 +5,7 @@ Usage:
 Using two elements, container (div) and a child inside, (span).
 Adding the directive to the container.
 
-### Example:
---------
+## Example:
   HTML:
   ```
   <div appTruncateMultipleLineText class="name-container">
