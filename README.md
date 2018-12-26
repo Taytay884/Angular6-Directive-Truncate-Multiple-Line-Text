@@ -6,10 +6,13 @@ Using two elements, container (div) and a child inside, (span).
 Adding the directive to the container.
 
 ### Example:
+--------
   HTML:
+  ```
   <div appTruncateMultipleLineText class="name-container">
     <span>{{text...}}</span>
   </div>
+  ```
   
   STYLE:
     Give the container constant height or max-height, when the textElement is taller than the container,
