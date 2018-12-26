@@ -6,7 +6,7 @@
   * Example:
   *
   * HTML:
-  * <div appTruncateMultipleLineText>
+  * <div appTruncateMultipleLineText class="name-container">
       <span>{{text...}}</span>
     </div>
   *
@@ -29,8 +29,8 @@ import {AfterViewInit, Directive, ElementRef, OnInit, Renderer2} from "@angular/
 @Directive({selector: '[appTruncateMultipleLineText]'})
 export class TruncateMultipleLineTextDirective implements OnInit, AfterViewInit {
 
-  containerElement: HTMLElement;
-  textElement: HTMLElement;
+  private containerElement: HTMLElement;
+  private textElement: HTMLElement;
 
   constructor(private renderer: Renderer2, private element: ElementRef) {
   }
@@ -40,11 +40,11 @@ export class TruncateMultipleLineTextDirective implements OnInit, AfterViewInit 
     this.textElement = <HTMLElement>(this.containerElement.children[0]);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.truncateTooLongName();
   }
 
-  truncateTooLongName() {
+  private truncateTooLongName(): void {
     const words = this.textElement.innerText.split(' ');
     while (this.containerElement.offsetHeight < this.textElement.offsetHeight) {
       words.pop();
